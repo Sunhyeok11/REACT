@@ -6,17 +6,18 @@
   <title>Document</title>
 </head>
 <body>
-  <span>Total clicks: 0</span>
-  <button id="btn">Click me</button>
+  <div id="root"></div>
 </body>
-<script>
-  let counter = 0;
-  const button = document.getElementById("btn");
-  const span = document.querySelector("span")
-  function handleClick() {
-    counter = counter + 1;
-    span.innerText = "Total clicks: ${counter}";
-  }
-  button.addEventListener("click", handleClick);
-</script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script>
+    const root = document.getElementById("root");
+    const span = React.createElement(
+      "span", 
+      { id: "sexy-span" }, 
+      "Hello i'm a span"
+    );
+    ReactDOM.createRoot(root).render(span); 
+  </script>
+
 </html>
