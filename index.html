@@ -13,11 +13,26 @@
   <script>
     const root = document.getElementById("root");
     const span = React.createElement(
-      "span", 
-      { id: "sexy-span" }, 
-      "Hello i'm a span"
-    );
-    ReactDOM.createRoot(root).render(span); 
+    "h3", 
+    {
+      id: "title",
+      onMouseEnter: () => console.log("mouse enter"),
+    }, 
+    "Hello i'm a span"
+  );
+    const btn = React.createElement(
+    "button", 
+    {
+      onClick: () => console.log("im Clicked"), 
+      style: {
+        backgroundColor : "tomato",
+      }
+    },
+    "Click me"
+  );
+    const container = React.createElement("div", null, [span,btn]);
+    ReactDOM.createRoot(root).render(container);
+
   </script>
 
 </html>
